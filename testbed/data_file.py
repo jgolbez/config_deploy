@@ -1,7 +1,5 @@
 # Imports
 
-import pandas
-import openpyxl
 import pyexcel
 from collections import defaultdict
 
@@ -13,7 +11,7 @@ sheet = pyexcel.get_sheet(file_name="lab_nw_auto_test.xlsx", name_columns_by_row
 
 #Dmitry helped me with this
 def create_records():
-    # DefaultDict creates an 'empty' dict we can append lists to without hvaing to create ahead, accepts value w/ no key
+    # DefaultDict creates an 'empty' dict we can append lists to without having to create ahead, accepts value w/ no key
     # Instead supplies a 'default' key based on the type (here list)
     device_to_interfaces = defaultdict(list)
     for record in sheet.records:

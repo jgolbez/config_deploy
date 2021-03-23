@@ -3,10 +3,6 @@
 from scrapli import Scrapli
 
 
-
-
-
-
 class Device:
     def __init__(self, device, interface_list):
         self.name = device
