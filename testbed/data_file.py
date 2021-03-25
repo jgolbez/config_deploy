@@ -21,5 +21,6 @@ def create_records():
         interface_data = dict(record)
         # Now append that dict to the default dict using a key of device
         device_to_interfaces[device].append(interface_data)
+        #print(device_to_interfaces)
 
     return dict(device_to_interfaces)
