@@ -13,13 +13,15 @@ print(data_source)
 nw_device_list = []
 for device, record in data_source.items():
     nw_device = Device(device, record)
+    print(nw_device.name)
     nw_device_list.append(nw_device)
-
-#for device in nw_device_list:
-#    device.build_intf_config()
-#    print(device.config_str)
-#    device.deploy_intf_config()
+print(nw_device_list)
+for device in nw_device_list:
+    print(device.name)
+    device.build_config()
+    print(device.config_str)
+    device.deploy_config()
 
 # Testing for VRF Output
-for device in nw_device_list:
-    device.verify_vrf()
+#for device in nw_device_list:
+#    device.verify_vrf()
