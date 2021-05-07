@@ -5,7 +5,7 @@ from collections import defaultdict
 
 # Data Sources
 sheet = pyexcel.get_sheet(file_name="lab_nw_auto_test.xlsx", name_columns_by_row=0)
-
+verify_sheet = pyexcel.get_sheet(file_name="lab_nw_auto_verify.xlsx", name_columns_by_row=0)
 
 # Function
 
@@ -24,3 +24,9 @@ def create_records():
         print(device_to_interfaces)
 
     return dict(device_to_interfaces)
+
+def create_verify_records():
+    ping_list = []
+    for record in verify_sheet.records:
+        ping_list.append(record.pop("ping_list"))
+    return ping_list

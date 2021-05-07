@@ -1,11 +1,13 @@
 # Imports
-
+import data_file
 from data_file import create_records
 from device import Device
 
 # Data Sources
 data_source = create_records()
 print(data_source)
+ping_list = data_file.create_verify_records()
+print(ping_list)
 
 # Main Loop
 
@@ -13,14 +15,15 @@ print(data_source)
 nw_device_list = []
 for device, record in data_source.items():
     nw_device = Device(device, record)
-    print(nw_device.name)
     nw_device_list.append(nw_device)
-print(nw_device_list)
+#for device in nw_device_list:
+#    print(device.name)
+#    device.build_config()
+#    print(device.config_str)
+#    device.deploy_config()
 for device in nw_device_list:
-    print(device.name)
-    device.build_config()
-    print(device.config_str)
-    device.deploy_config()
+#    device.verify_ping(ping_list)
+    device.verify_routing()
 
 # Testing for VRF Output
 #for device in nw_device_list:
