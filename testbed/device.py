@@ -65,6 +65,7 @@ class Device:
             "host": self.name,
             "auth_username": "admin",
             "auth_password": "admin",
+            "auth_strict_key": False,
             "platform": "cisco_iosxe",
             "timeout_transport": 20,
             "timeout_socket": 20,
@@ -82,6 +83,7 @@ class Device:
             "host": self.name,
             "auth_username": "admin",
             "auth_password": "admin",
+            "auth_strict_key": False,
             "platform": "cisco_iosxe",
             "timeout_transport": 20,
             "timeout_socket": 20,
@@ -107,6 +109,7 @@ class Device:
             "host": self.name,
             "auth_username": "admin",
             "auth_password": "admin",
+            "auth_strict_key": False,
             "platform": "cisco_iosxe",
             "timeout_transport": 20,
             "timeout_socket": 20,
@@ -118,7 +121,7 @@ class Device:
             verify_ping = conn.send_command(f"ping {ip}")
             verify_ping.raise_for_status()
             print(verify_ping.result)
-            if "(5/5)" or "(4/5)" in verify_ping.result:
+            if "!!!!!" or "!!!!" in verify_ping.result:
                 print(f"Ping from {self.name} to {ip} is successful")
             else:
                 print("Ping was not completed successfully")
@@ -128,6 +131,7 @@ class Device:
             "host": self.name,
             "auth_username": "admin",
             "auth_password": "admin",
+            "auth_strict_key": False,
             "platform": "cisco_iosxe",
             "timeout_transport": 20,
             "timeout_socket": 20,

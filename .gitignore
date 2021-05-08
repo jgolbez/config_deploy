@@ -1,3 +1,7 @@
+#keys
+id_ed25519_cfgdeploy.pub
+id_ed25519_cfgdeploy
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
