@@ -45,17 +45,16 @@ else:
     sys.exit()
 get_header = {'Content-Type': "application/json", 'Cookie': jsessionid}
 print('MOVING TO API CALL AS REQUESTED')
-testget = vManageAPI(vmanage_url, jsessionid, token, get_header, post_header)
+test_api = vManageAPI(vmanage_url, jsessionid, token, get_header, post_header)
 # Test call - Get list of devices - endpoint api url is /device
-feature_templates = testget.get_api("template/feature")
+#feature_templates = test_api.get_api("template/feature")
+create_feature = test_api.post_api("template/feature")
 # TODO Clean up what is returned so only relevant data is used
-print(type(feature_templates[0]))
+#print(type(feature_templates[0]))
 #print(feature_templates)
 #print(json.dumps(feature_templates, indent=4))
-
-for template in feature_templates:
-    print(template["templateName"])
-    print(template['templateDescription'])
-    print(template['templateType'])
-    print(template['deviceType'])
-    print(json.dumps(json.loads(template["templateDefinition"]), indent=4))
+#for template in feature_templates:
+#    print("----------ACTUAL TEMPLATE FOLLOWS---------")
+#    print(json.dumps(json.loads(template), indent=4))
+#    print("----------RELEVANT DATA in JSON FORMAT----")
+    #print(json.dumps(json.loads(template["templateDefinition"]), indent=4))
